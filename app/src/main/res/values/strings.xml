@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">NedBankDemo</string>
     <string name="str_see_money_differently">SEE MONEY DIFFERENTLY</string>
+    <string name="str_welcome">Welcome</string>
+    <string name="str_login">LOGIN</string>
+    <string name="str_enter_app_pin">Enter app PIN</string>
+    <string name="str_review_accept_terms_conditions">Review and accept our revised Terms &amp; Conditions</string>
+    <string name="str_view_balance">VIEW BALANCE</string>
 </resources>

@@ -11,7 +11,7 @@
 
     <RelativeLayout
         android:id="@+id/logo_RelativeLayout"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/dimen_size_20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/circle"
@@ -32,9 +32,94 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/str_see_money_differently"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/dimen_size_5dp"
         android:textColor="@android:color/white"
-        android:textSize="10sp"/>
+        android:textSize="@dimen/dimen_size_10sp"/>
 
+    <LinearLayout
+        android:layout_below="@id/logo_RelativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_size_70dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_welcome"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_size_15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="JOHN!"
+            android:layout_marginLeft="@dimen/dimen_size_5dp"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_size_18sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/login_TextView"
+        android:layout_below="@id/logo_RelativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_login"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/dimen_size_20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/dimen_size_150dp"
+        />
+
+    <TextView
+        android:layout_below="@+id/login_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_enter_app_pin"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_size_10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_review_accept_terms_conditions"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="@dimen/dimen_size_20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dimen_size_60dp"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/dimen_size_5dp"
+        android:background="@color/colorNedbankGreen">
+        
+        <ImageView
+            android:layout_marginLeft="@dimen/dimen_size_10dp"
+            android:layout_marginTop="@dimen/dimen_size_5dp"
+            android:layout_marginBottom="@dimen/dimen_size_5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/viewbalance"/>
+
+        <TextView
+            android:layout_marginLeft="@dimen/dimen_size_15dp"
+            android:layout_marginRight="@dimen/dimen_size_10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_view_balance"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/dimen_size_15sp"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
