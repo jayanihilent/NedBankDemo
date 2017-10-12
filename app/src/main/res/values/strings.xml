@@ -8,4 +8,5 @@
     <string name="str_review_accept_terms_conditions">Review and accept our revised Terms &amp; Conditions</string>
     <string name="str_view_balance">VIEW BALANCE</string>
     <string name="str_provide_valid_pin">Please provide valid PIN.</string>
+    <string name="str_login_success">Login successful</string>
 </resources>

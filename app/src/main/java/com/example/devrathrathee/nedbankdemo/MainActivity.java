@@ -19,19 +19,15 @@ public class MainActivity extends AppCompatActivity {
 
     private final String PIN_ONE_VALIDATION = "1", PIN_TWO_VALIDATION = "2", PIN_THREE_VALIDATION = "3", PIN_FOUR_VALIDATION = "4",
                          PIN_FIVE_VALIDATION = "5";
-    boolean isTextChanged = false;
+
+    EditText pinOne_EditText,pinTwo_EditText,pinThree_EditText,pinFour_EditText,pinFive_EditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText pinOne_EditText = findViewById(R.id.pinOne_EditText);
-        final EditText pinTwo_EditText = findViewById(R.id.pinTwo_EditText);
-        final EditText pinThree_EditText = findViewById(R.id.pinThree_EditText);
-        final EditText pinFour_EditText = findViewById(R.id.pinFour_EditText);
-        final EditText pinFive_EditText = findViewById(R.id.pinFive_EditText);
-        final EditText pinSix_EditText = findViewById(R.id.pinSix_EditText);
+        initialiseUI();
 
         pinOne_EditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -45,9 +41,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                pinTwo_EditText.requestFocus();
+                if(getCurrentFocus() == pinOne_EditText) {
+                    pinTwo_EditText.requestFocus();
+                }
             }
         });
+
 
         pinTwo_EditText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -60,7 +59,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
+            public void afterTextChanged(Editable editable)
+            {
+                if(getCurrentFocus() == pinTwo_EditText)
                 pinThree_EditText.requestFocus();
             }
         });
@@ -79,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+
+                if(getCurrentFocus() == pinThree_EditText)
                 pinFour_EditText.requestFocus();
             }
         });
@@ -96,146 +99,72 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                if(getCurrentFocus() == pinFour_EditText)
                 pinFive_EditText.requestFocus();
             }
         });
 
 
+        pinFive_EditText.addTextChangedListener(pinFiveTextWatcher);
 
-        pinFive_EditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                isTextChanged = true;
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-                if (pinOne_EditText.getText().toString().equals(PIN_ONE_VALIDATION) &&
-                        pinTwo_EditText.getText().toString().equals(PIN_TWO_VALIDATION) &&
-                        pinThree_EditText.getText().toString().equals(PIN_THREE_VALIDATION) &&
-                        pinFour_EditText.getText().toString().equals(PIN_FOUR_VALIDATION) &&
-                        pinFive_EditText.getText().toString().equals(PIN_FIVE_VALIDATION)) {
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                } else {
-                    Toast.makeText(MainActivity.this, MainActivity.this.getResources().getString(R.string.str_provide_valid_pin), Toast.LENGTH_SHORT).show();
-
-                  //  pinSix_EditText.requestFocus();
-
-                    pinOne_EditText.setText("");
-                    pinOne_EditText.clearFocus();
-
-                    pinTwo_EditText.setText("");
-                    pinTwo_EditText.clearFocus();
-
-                    pinThree_EditText.setText("");
-                    pinThree_EditText.clearFocus();
-
-                    pinFour_EditText.setText("");
-                    pinFour_EditText.clearFocus();
-
-                  //  pinFive_EditText.setText("");
-                   // pinFive_EditText.clearFocus();
-
-
-                    //  pinOne_EditText.requestFocus();
-                }
-
-
-
-            }
-        });
-
-        pinSix_EditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-                if (pinOne_EditText.getText().toString().equals(PIN_ONE_VALIDATION) &&
-                        pinTwo_EditText.getText().toString().equals(PIN_TWO_VALIDATION) &&
-                        pinThree_EditText.getText().toString().equals(PIN_THREE_VALIDATION) &&
-                        pinFour_EditText.getText().toString().equals(PIN_FOUR_VALIDATION) &&
-                        pinFive_EditText.getText().toString().equals(PIN_FIVE_VALIDATION)) {
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                } else {
-                    Toast.makeText(MainActivity.this, MainActivity.this.getResources().getString(R.string.str_provide_valid_pin), Toast.LENGTH_SHORT).show();
-
-                    pinSix_EditText.requestFocus();
-
-                    pinOne_EditText.setText("");
-                    pinOne_EditText.clearFocus();
-
-                    pinTwo_EditText.setText("");
-                    pinTwo_EditText.clearFocus();
-
-                    pinThree_EditText.setText("");
-                    pinThree_EditText.clearFocus();
-
-                    pinFour_EditText.setText("");
-                    pinFour_EditText.clearFocus();
-
-                    pinFive_EditText.setText("");
-                    pinFive_EditText.clearFocus();
-
-
-                    //  pinOne_EditText.requestFocus();
-                }
-
-
-
-            }
-        });
-
-        pinSix_EditText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean b) {
-                if(b) {
-                    if (pinOne_EditText.getText().toString().equals(PIN_ONE_VALIDATION) &&
-                            pinTwo_EditText.getText().toString().equals(PIN_TWO_VALIDATION) &&
-                            pinThree_EditText.getText().toString().equals(PIN_THREE_VALIDATION) &&
-                            pinFour_EditText.getText().toString().equals(PIN_FOUR_VALIDATION) &&
-                            pinFive_EditText.getText().toString().equals(PIN_FIVE_VALIDATION)) {
-                        startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                    } else {
-                        Toast.makeText(MainActivity.this, MainActivity.this.getResources().getString(R.string.str_provide_valid_pin), Toast.LENGTH_SHORT).show();
-
-                        pinSix_EditText.requestFocus();
-
-                        pinOne_EditText.setText("");
-                        pinOne_EditText.clearFocus();
-
-                        pinTwo_EditText.setText("");
-                        pinTwo_EditText.clearFocus();
-
-                        pinThree_EditText.setText("");
-                        pinThree_EditText.clearFocus();
-
-                        pinFour_EditText.setText("");
-                        pinFour_EditText.clearFocus();
-
-                        pinFive_EditText.setText("");
-                        pinFive_EditText.clearFocus();
-
-
-                        //  pinOne_EditText.requestFocus();
-                    }
-                }
-            }
-        });
     }
+
+    private void initialiseUI() {
+        pinOne_EditText = findViewById(R.id.pinOne_EditText);
+        pinTwo_EditText = findViewById(R.id.pinTwo_EditText);
+        pinThree_EditText = findViewById(R.id.pinThree_EditText);
+        pinFour_EditText = findViewById(R.id.pinFour_EditText);
+        pinFive_EditText = findViewById(R.id.pinFive_EditText);
+    }
+
+    TextWatcher pinFiveTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            if (pinOne_EditText.getText().toString().equals(PIN_ONE_VALIDATION) &&
+                    pinTwo_EditText.getText().toString().equals(PIN_TWO_VALIDATION) &&
+                    pinThree_EditText.getText().toString().equals(PIN_THREE_VALIDATION) &&
+                    pinFour_EditText.getText().toString().equals(PIN_FOUR_VALIDATION) &&
+                    pinFive_EditText.getText().toString().equals(PIN_FIVE_VALIDATION)) {
+
+
+                Toast.makeText(MainActivity.this, MainActivity.this.getResources().getString(R.string.str_login_success), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, HomeActivity.class));
+
+            } else {
+                Toast.makeText(MainActivity.this, MainActivity.this.getResources().getString(R.string.str_provide_valid_pin), Toast.LENGTH_SHORT).show();
+
+                pinOne_EditText.setText("");
+                pinOne_EditText.requestFocus();
+
+                pinTwo_EditText.setText("");
+                pinTwo_EditText.setFocusable(false);
+                pinTwo_EditText.setFocusableInTouchMode(true);
+
+                pinThree_EditText.setText("");
+                pinThree_EditText.setFocusable(false);
+                pinThree_EditText.setFocusableInTouchMode(true);
+
+                pinFour_EditText.setText("");
+                pinFour_EditText.setFocusable(false);
+                pinFour_EditText.setFocusableInTouchMode(true);
+
+                pinFive_EditText.removeTextChangedListener(pinFiveTextWatcher);
+                pinFive_EditText.setFocusable(false);
+                pinFive_EditText.setFocusableInTouchMode(true);
+                pinFive_EditText.setText("");
+                pinFive_EditText.addTextChangedListener(pinFiveTextWatcher);
+
+            }
+        }
+    };
 }

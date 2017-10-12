@@ -4,42 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.devrathrathee.nedbankdemo.MainActivity"
     android:background="@drawable/background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.example.devrathrathee.nedbankdemo.MainActivity">
 
 
     <RelativeLayout
         android:id="@+id/logo_RelativeLayout"
-        android:layout_marginTop="@dimen/dimen_size_20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/circle"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_size_20dp"
+        android:background="@drawable/circle">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:background="@drawable/headerlogo"/>
+            android:background="@drawable/headerlogo" />
 
     </RelativeLayout>
 
 
     <TextView
-        android:layout_below="@id/logo_RelativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/logo_RelativeLayout"
         android:layout_centerHorizontal="true"
-        android:text="@string/str_see_money_differently"
         android:layout_marginTop="@dimen/dimen_size_5dp"
+        android:text="@string/str_see_money_differently"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/dimen_size_10sp"/>
+        android:textSize="@dimen/dimen_size_10sp" />
 
     <LinearLayout
-        android:layout_below="@id/logo_RelativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/logo_RelativeLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="@dimen/dimen_size_70dp">
 
@@ -48,50 +48,51 @@
             android:layout_height="wrap_content"
             android:text="@string/str_welcome"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/dimen_size_15sp"/>
+            android:textSize="@dimen/dimen_size_15sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="JOHN!"
             android:layout_marginLeft="@dimen/dimen_size_5dp"
+            android:text="JOHN!"
             android:textColor="@android:color/white"
             android:textSize="@dimen/dimen_size_18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </LinearLayout>
 
 
     <TextView
         android:id="@+id/login_TextView"
-        android:layout_below="@id/logo_RelativeLayout"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/logo_RelativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_size_150dp"
         android:text="@string/str_login"
         android:textColor="@android:color/white"
         android:textSize="@dimen/dimen_size_20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/dimen_size_150dp"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/app_pin_TextView"
-        android:layout_below="@+id/login_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/str_enter_app_pin"
-        android:textColor="@android:color/white"
+        android:layout_below="@+id/login_TextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dimen_size_10dp"/>
+        android:layout_marginTop="@dimen/dimen_size_10dp"
+        android:text="@string/str_enter_app_pin"
+        android:textColor="@android:color/white" />
 
     <LinearLayout
         android:id="@+id/loginPin_LinearLayout"
-        android:layout_below="@+id/app_pin_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/app_pin_TextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dimen_size_30dp">
+        android:layout_marginTop="@dimen/dimen_size_30dp"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
 
         <EditText
             android:id="@+id/pinOne_EditText"
@@ -99,113 +100,101 @@
             android:layout_height="wrap_content"
             android:hint=""
             android:inputType="numberPassword"
-            android:maxLength="1"
             android:lines="1"
+            android:maxLength="1"
+            android:nextFocusForward="@+id/pinTwo_EditText"
             android:textColor="@android:color/white"
-            android:theme="@style/EditTextTheme"
-            android:nextFocusForward="@+id/pinTwo_EditText"/>
+            android:theme="@style/EditTextTheme" />
 
         <EditText
             android:id="@+id/pinTwo_EditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLength="1"
-            android:lines="1"
             android:inputType="numberPassword"
+            android:lines="1"
+            android:maxLength="1"
+            android:nextFocusForward="@+id/pinThree_EditText"
             android:textColor="@android:color/white"
-            android:theme="@style/EditTextTheme"
-            android:nextFocusForward="@+id/pinThree_EditText"/>
+            android:theme="@style/EditTextTheme" />
 
         <EditText
             android:id="@+id/pinThree_EditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLength="1"
-            android:lines="1"
             android:inputType="numberPassword"
+            android:lines="1"
+            android:maxLength="1"
+            android:nextFocusForward="@id/pinFour_EditText"
             android:textColor="@android:color/white"
-            android:theme="@style/EditTextTheme"
-            android:nextFocusForward="@id/pinFour_EditText"/>
+            android:theme="@style/EditTextTheme" />
 
         <EditText
             android:id="@+id/pinFour_EditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLength="1"
-            android:lines="1"
             android:inputType="numberPassword"
+            android:lines="1"
+            android:maxLength="1"
             android:textColor="@android:color/white"
-            android:theme="@style/EditTextTheme"/>
+            android:theme="@style/EditTextTheme" />
 
         <EditText
             android:id="@+id/pinFive_EditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLength="1"
-            android:lines="1"
             android:inputType="numberPassword"
-            android:textColor="@android:color/white"
-            android:theme="@style/EditTextTheme"
-            />
-
-        <EditText
-            android:id="@+id/pinSix_EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:maxLength="1"
             android:lines="1"
-            android:inputType="numberPassword"
+            android:maxLength="1"
             android:textColor="@android:color/white"
-            android:theme="@style/EditTextTheme"/>
+            android:theme="@style/EditTextTheme" />
 
     </LinearLayout>
 
     <TextView
-        android:layout_below="@id/loginPin_LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/loginPin_LinearLayout"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_size_10dp"
         android:text="@string/str_need_help_with_login"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="@dimen/dimen_size_10dp"/>
+        android:textColor="@android:color/white" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/str_review_accept_terms_conditions"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="@dimen/dimen_size_20dp"/>
+        android:layout_marginBottom="@dimen/dimen_size_20dp"
+        android:text="@string/str_review_accept_terms_conditions"
+        android:textColor="@android:color/white" />
 
     <LinearLayout
         android:id="@+id/viewBalance_LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/dimen_size_60dp"
-        android:layout_alignParentBottom="true"
-        android:padding="@dimen/dimen_size_5dp"
-        android:background="@color/colorNedbankGreen">
-        
+        android:background="@color/colorNedbankGreen"
+        android:padding="@dimen/dimen_size_5dp">
+
         <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_size_5dp"
             android:layout_marginLeft="@dimen/dimen_size_10dp"
             android:layout_marginTop="@dimen/dimen_size_5dp"
-            android:layout_marginBottom="@dimen/dimen_size_5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/viewbalance"/>
+            android:background="@drawable/viewbalance" />
 
         <TextView
-            android:layout_marginLeft="@dimen/dimen_size_15dp"
-            android:layout_marginRight="@dimen/dimen_size_10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/dimen_size_15dp"
+            android:layout_marginRight="@dimen/dimen_size_10dp"
             android:text="@string/str_view_balance"
             android:textColor="@android:color/white"
-            android:layout_gravity="center_vertical"
-            android:textSize="@dimen/dimen_size_15sp"/>
+            android:textSize="@dimen/dimen_size_15sp" />
 
     </LinearLayout>
 
