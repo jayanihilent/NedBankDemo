@@ -76,12 +76,98 @@
         />
 
     <TextView
+        android:id="@+id/app_pin_TextView"
         android:layout_below="@+id/login_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/str_enter_app_pin"
         android:textColor="@android:color/white"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_size_10dp"/>
+
+    <LinearLayout
+        android:id="@+id/loginPin_LinearLayout"
+        android:layout_below="@+id/app_pin_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_size_30dp">
+
+        <EditText
+            android:id="@+id/pinOne_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:inputType="numberPassword"
+            android:maxLength="1"
+            android:lines="1"
+            android:textColor="@android:color/white"
+            android:theme="@style/EditTextTheme"
+            android:nextFocusForward="@+id/pinTwo_EditText"/>
+
+        <EditText
+            android:id="@+id/pinTwo_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:lines="1"
+            android:inputType="numberPassword"
+            android:textColor="@android:color/white"
+            android:theme="@style/EditTextTheme"
+            android:nextFocusForward="@+id/pinThree_EditText"/>
+
+        <EditText
+            android:id="@+id/pinThree_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:lines="1"
+            android:inputType="numberPassword"
+            android:textColor="@android:color/white"
+            android:theme="@style/EditTextTheme"
+            android:nextFocusForward="@id/pinFour_EditText"/>
+
+        <EditText
+            android:id="@+id/pinFour_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:lines="1"
+            android:inputType="numberPassword"
+            android:textColor="@android:color/white"
+            android:theme="@style/EditTextTheme"/>
+
+        <EditText
+            android:id="@+id/pinFive_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:lines="1"
+            android:inputType="numberPassword"
+            android:textColor="@android:color/white"
+            android:theme="@style/EditTextTheme"
+            />
+
+        <EditText
+            android:id="@+id/pinSix_EditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:maxLength="1"
+            android:lines="1"
+            android:inputType="numberPassword"
+            android:textColor="@android:color/white"
+            android:theme="@style/EditTextTheme"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@id/loginPin_LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/str_need_help_with_login"
+        android:textColor="@android:color/white"
         android:layout_marginTop="@dimen/dimen_size_10dp"/>
 
     <TextView
@@ -94,6 +180,7 @@
         android:layout_marginBottom="@dimen/dimen_size_20dp"/>
 
     <LinearLayout
+        android:id="@+id/viewBalance_LinearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
