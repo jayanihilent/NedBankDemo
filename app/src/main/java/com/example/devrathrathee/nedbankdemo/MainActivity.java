@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, MainActivity.this.getResources().getString(R.string.str_provide_valid_pin), Toast.LENGTH_SHORT).show();
 
-                    pinSix_EditText.requestFocus();
+                  //  pinSix_EditText.requestFocus();
 
                     pinOne_EditText.setText("");
                     pinOne_EditText.clearFocus();
@@ -139,8 +139,8 @@ public class MainActivity extends AppCompatActivity {
                     pinFour_EditText.setText("");
                     pinFour_EditText.clearFocus();
 
-                    pinFive_EditText.setText("");
-                    pinFive_EditText.clearFocus();
+                  //  pinFive_EditText.setText("");
+                   // pinFive_EditText.clearFocus();
 
 
                     //  pinOne_EditText.requestFocus();
